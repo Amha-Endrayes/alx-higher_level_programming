@@ -5,7 +5,7 @@ if __name__ == "__main__":
     argNumber = argLength - 1
     if argLength == 1:
         print("0 arguments.")
-    else:    
+    else:
         if argLength == 2:
             print("{:d} argument:".format(argNumber))
         else:
