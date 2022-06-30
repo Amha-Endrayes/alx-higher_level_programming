@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 import sys
 
-if len(sys.argv) == 0:
+argLength = len(sys.argv)
+
+if argLength == 1:
     print("0 arguments.")
 else:    
+    if argLength == 2:
+        print((argLength - 1), "argument:")
+    else:
+        print((argLength - 1), "arguments:")      
     for i in range(1, len(sys.argv)):
-        if len(sys.argv) == 1:
-            print(len(sys.argv), "argument:")
-        else:
-            print(len(sys.argv), "arguments:")  
-        print(i, sys.argv[i])
+        print("{:d}:".format(i) , sys.argv[i])
