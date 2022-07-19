@@ -1,56 +1,64 @@
 #!/usr/bin/python3
-class Square:
+""" Module providing a definition of a class 'Square'
+"""
+
+
+class Square():
+    """ Definition of a 'Square'
+    """
     def __init__(self, size=0, position=(0, 0)):
+        """ Instantiate a 'Square'
+        """
         self.size = size
         self.position = position
 
-    # Size property
     @property
     def size(self):
+        """ Get the size of a square
+        """
         return self.__size
 
-    # Size setter modifies
     @size.setter
-    def size(self, value):
-        if type(value) != int:
-            raise TypeError('size must be an integer')
-        elif value < 0:
-            raise ValueError('size must be >= 0')
-        else:
-            self.__size = value
+    def size(self, size):
+        """ Set the size of a square
+        """
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = size
 
-    # Position property
     @property
     def position(self):
+        """ Get the position of a square
+        """
         return self.__position
 
-    # Position setter modifies
     @position.setter
-    def position(self, value):
-        message = 'position must be a tuple of 2 positive integers'
-        if type(value) != tuple or len(value) != 2:
-            raise TypeError(message)
+    def position(self, position):
+        """ Set the position of a square
+        """
+        if not (isinstance(position, tuple) and
+                len(position) == 2 and
+                isinstance(position[0], int) and
+                isinstance(position[1], int) and
+                position[0] >= 0 and
+                position[1] >= 0):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = position
 
-        for items in value:
-            if type(items) != int or items < 0:
-                raise TypeError(message)
-
-        self.__position = value
-
-    # Functions
     def area(self):
-        return self.__size ** 2
+        """ Compute the area of a 'Square'
+        """
+        return self.size ** 2
 
     def my_print(self):
-        size = self.__size
-        nl = self.__position[1]
-        ws = self.__position[0]
-
-        if size == 0:
+        """ Print a visual representation of a square
+        """
+        if self.size:
+            print('\n' * self.position[1], end="")
+            print('\n'.join(
+                [' ' * self.position[0] + '#' * self.size] * self.size
+            ))
+        else:
             print()
-
-        for newlines in range(nl):
-            print()
-
-        for row in range(size):
-            print((' ' * ws) + ('#' * size))
