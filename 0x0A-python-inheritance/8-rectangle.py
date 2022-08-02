@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-""" A class for rectangles
+""" Provides a class to represent rectangles
 """
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
-class Rectangel(BaseGeometry):
-    """ Defination of a fixed-size rectangel
+class Rectangle(BaseGeometry):
+    """ Definition of fixed-size rectangle
     """
     def __init__(self, width, height):
-        """ inits a rectangle parmeters
+        """ Instantiate a rectangle
         """
         self.integer_validator('width', width)
         self.integer_validator('height', height)
