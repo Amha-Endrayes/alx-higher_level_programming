@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" A function to add an attribute to an object if possible
+""" If possible adds an attribute to an object
 """
 
 
