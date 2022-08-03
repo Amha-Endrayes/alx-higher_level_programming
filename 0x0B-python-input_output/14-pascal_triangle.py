@@ -10,13 +10,13 @@ def pascal_triangle(n):
     if n <= 0:
         return []
 
-    resultTriangel = []
+    resultTriangle = []
     for element in range(n):
         if element == 0:
-            resultTriangel.append([1])
+            resultTriangle.append([1])
             continue
         if element == 1:
-            resultTriangel.append([1, 1])
+            resultTriangle.append([1, 1])
             continue
         row = []
         # init row
@@ -25,7 +25,9 @@ def pascal_triangle(n):
         for item in range(1, element):
             row[0] = 1
             row[element] = 1
-            row[item] = resultTriangel[element - 1][item] + resultTriangel[element - 1][item - 1]
-        resultTriangel.append(row)
-            
-    return resultTriangel
+            A = resultTriangle[element - 1][item]
+            B = resultTriangle[element - 1][item - 1]
+            row[item] = A + B
+        resultTriangle.append(row)
+
+    return resultTriangle
