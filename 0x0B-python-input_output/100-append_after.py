@@ -4,17 +4,17 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """Insert new_string after search_string into filename
+    """Inserts a given string after another given string into filename
     """
 
     with open(filename, mode="r+", encoding="utf-8") as readFile:
-        temp = readFile.readlines()
+        hold_My_Beer = readFile.readlines()
 
     count = 0
     with open(filename, mode="w", encoding="utf-8") as writeFile:
-        for lines in temp:
+        for lines in hold_My_Beer:
             count += 1
             if search_string in lines:
-                temp.insert(count, new_string)
-        for lines in temp:
+                hold_My_Beer.insert(count, new_string)
+        for lines in hold_My_Beer:
             writeFile.write(lines)
