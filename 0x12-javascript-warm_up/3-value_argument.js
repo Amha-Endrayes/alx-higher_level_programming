@@ -1,6 +1,5 @@
 #!/usr/bin/node
-const { argv } = require('node:process');
-
+const argv = process.argv;
 if (argv[2] === undefined) {
   console.log('No Arguments');
 } else {
