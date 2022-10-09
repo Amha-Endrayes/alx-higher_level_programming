@@ -14,7 +14,7 @@ def filter_names_safe():
         argv[3]: database name
         argv[4]: state name
     """
-    if len(sys.argv) == 10:
+    if len(sys.argv) == 5:
         db = MySQLdb.connect(host="localhost",
                              port=3306,
                              user=sys.argv[1],
