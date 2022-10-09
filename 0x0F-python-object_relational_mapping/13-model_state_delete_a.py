@@ -13,15 +13,9 @@ def delete_a_state_obj():
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-
-    rows = session.query(State).all()
-
-    for i in rows:
-        if 'a' in i.__dict__['name']:
-            session.delete(i)
-
+    for state in session.query(State).filter(State.name.like('%a%')):
+        session.delete(state)
     session.commit()
-
     session.close()
 
 
