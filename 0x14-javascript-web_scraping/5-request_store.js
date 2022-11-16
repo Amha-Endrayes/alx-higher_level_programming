@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// JS Script
+// A JS that gets the contents of a webpage and stores it in a file
 require('request').get(process.argv[2], function (err, r, body) {
   if (err) {
     console.log(err);

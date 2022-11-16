@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// JS Script
+// A JS that prints the number of movies where the character “Wedge Antilles” is present
 require('request').get(process.argv[2], function (err, r, body) {
   if (err) {
     console.log(err);

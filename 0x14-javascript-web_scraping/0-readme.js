@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// JS Script to read a file
+// A JS that reads and prints the content of a file.
 const process = require('process');
 const filesystem = require('fs');
 

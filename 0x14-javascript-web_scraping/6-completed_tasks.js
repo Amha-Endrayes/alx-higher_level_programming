@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// JS Script
+// A JS that computes the number of tasks completed by user id
 require('request').get(process.argv[2], function (err, r, body) {
   if (err) {
     console.log(err);

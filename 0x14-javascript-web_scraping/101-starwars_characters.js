@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// A JS that prints all characters of a Star Wars movie in order
 const process = require('process');
 const request = require('request');
 const order = [];
@@ -19,7 +20,7 @@ function getCharName (charUrl) {
 
 function doParse () {
   const movie = process.argv[2];
-  const url = 'https://swapi-api.hbtn.io/api/films/' + movie;
+  const url = 'https://swapi-api.hbtn.io/api/films/' + movie + '/';
 
   request(url, function (error, response, body) {
     if (error != null) {
